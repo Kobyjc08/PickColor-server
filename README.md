@@ -15,3 +15,5 @@ To build the backend I will use:
 -PostgreSQL
 
 ## How to use
+
+npm install => to install all dependencies
