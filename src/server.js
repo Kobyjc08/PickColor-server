@@ -47,8 +47,9 @@ app.get("/colors/:id", function (req, res) {
 });
 
 app.get("/colors", function (req, res) {
+  const { limit, page } = req.query;
   pool
-    .query("select * from colors;")
+    .query(`select * from colors limit ${limit} offset ${(page - 1) * limit};`)
     .then((result) => res.json(result.rows))
     .catch((e) => console.error(e));
 });
